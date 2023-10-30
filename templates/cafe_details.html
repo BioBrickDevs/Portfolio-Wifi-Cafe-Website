@@ -1,0 +1,21 @@
+{%extends "base.html" %}
+
+{% block title %}
+<title>Wifi Cafe website for Portfolio</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>{{cafe["name"]}}</h1>
+    <img src="{{ cafe["img_url"] }}" class="img-fluid" style="max-height:500px;" alt="restaurant picture">
+    <br>
+    <a href="{{ cafe["map_url"] }}">Show on google map.</a><br>
+    Location: {{cafe["location"]}}<br>
+    Power outlet: {{cafe["has_sockets"]}}<br>
+    Wifi: {{cafe["has_wifi"]}}<br>
+    Toilet: {{cafe["has_toilet"]}}<br>
+    Can take calls: {{cafe["can_take_calls"]}}<br>
+    Seats: {{cafe["seats"]}}<br>
+    Coffee price: {{cafe["coffee_price"]}}<br>
+</div>
+{% endblock content %}

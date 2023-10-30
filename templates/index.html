@@ -1,0 +1,18 @@
+{%extends "base.html" %}
+
+{% block title %}
+<title>Wifi Cafe website for Portfolio</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+<h1>All the Cafes</h1>
+
+{%for cafe in cafes["cafes"]%}
+   <a href= "{{ url_for('cafe_details', id=cafe["id"])}}"> {{cafe["name"]}}, {{cafe["location"] }}</a>
+<br>
+
+{%endfor%}
+
+</div>
+{% endblock content %}

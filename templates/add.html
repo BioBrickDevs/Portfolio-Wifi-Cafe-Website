@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}
+<title>Add a Cafe</title>
+{% endblock title %}
+{% block content %}
+{% if success==False %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+
+    {% endif %}
+{% endwith %}
+{% endif %}
+
+<div class="container">
+    <h1>Add a Cafe</h1>
+
+{{ form.csrf_token }}
+{{ render_form(form) }}
+</div>
+{% endblock content %}
